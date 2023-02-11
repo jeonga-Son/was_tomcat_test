@@ -10,46 +10,57 @@
 	<form action="서버주소" method="get/post">
 		<fieldset>
 			<ol>
-				<ul>
-					<label for="name">이름</label>
-					<input type="text" name=userName" id="name"
-					autofocus="autofocus" placeholder="이름을 입력해주세요."/>
-				</ul>
-				<ul>
-					<label for="id">아이디</label>
-					<input type="text" name=userName" id="id"
-					autofocus="autofocus" placeholder="아이디를 입력해주세요."/>
-					<button>중복체크</button>
-				</ul>
-				<ul>
-					<label for="pw">비밀번호</label>
-					<input type="text" name=userName" id="pw"
-					autofocus="autofocus" placeholder="비밀번호를 입력해주세요."/>
-				</ul>
-				<ul>
-					<label for="pwCheck">비밀번호 확인</label>
-					<input type="text" name=userName" id="pwCheck"
-					autofocus="autofocus" placeholder="비밀번호를 재입력해주세요."/>
-				</ul>
-				<ul>
-					<label for="email">이메일</label>
-					<input type="email" name=userName" placeholder="ex) gildong@naver.com" required="required"/>
-					<input type="checkbox" name="xxx" value="받음" />수신여부
-				</ul>
-				<ul>
-					<label>연락처</label>
-					<input type="email" name=userName" placeholder="ex) 010-1234-5678" required="required"/>
-				</ul>
-				<ul>
-					<label>메일수신여부</label>
-					<input type="checkbox" name="xxx" value="받음" />받음
-					<input type="checkbox" name="xxx" value="받음" />받지않음
-				</ul>
-				<ul>
-					<label>관심분야</label>
-				</ul>
+				<li>
+				<!-- 이름 작성 예제 -->
+					<label for = "userName">이름</label>
+					<input type="text" name="userName" id="userName"
+					autofocus="autofocus" placeholder="ex) 홍길동"/>
+				</li>
+				<li>
+				<!-- 이메일 작성 예제 -->
+					<label>이메일</label>
+					<input type="email" placeholder="aa@aa.com" required="required"/>
+				</li>
+				<li>
+				<!-- 날짜 선택 예제 -->
+					<input type="date">
+				</li>
+				<li>
+				<!-- 색상 선택 예제 -->
+					<label>색상</label>
+					<input type="color"/>
+				</li>
+				<li>
+				<!-- 수량 선택 예제 -->
+					<label>수량</label>
+					<input type="range" min="1" max="10" value="5"/>
+				</li>
+				<li>
+				<!-- 트레이 선택 예제 -->
+					<label>선택</label>
+					<select>
+						<option value="람보르기니">람보르기니</option>
+						<option value="BMW">BMW</option>
+						<option value="벤츠">벤츠</option>
+					</select>
+				</li>
+				<li>
+				<!-- 체크박스 선택 예제 -->
+					<label>체크박스</label>
+					<input type="checkbox" name="java" value="자바">자바
+					<input type="checkbox" name="JDBC" value="데이터베이스">데이터베이스
+					<input type="checkbox" name="Spring" value="스프링" checked>스프링
+				</li>
+				<li>
+				<!-- 라디오 버튼 선택 예제 -->
+					<label>라디오 버튼</label>
+					<input type="radio" name="fruit" value="사과">사과
+					<input type="radio" name="fruit" value="포도">포도
+					<input type="radio" name="fruit" value="멜론">멜론
+				</li>
 			</ol>
-		
+		</fieldset>
+		<fieldset>
 			<button >취소</button>
 			<button type="submit">저장</button>
 		</fieldset>
