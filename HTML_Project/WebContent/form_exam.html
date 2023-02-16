@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>form exam</h1>
+	<!-- control + space 누르면 자동 완성 됨. -->
+	
+	<form action="서버주소" method="get/post">
+		<fieldset>
+			<ol>
+				<li>
+					<label for="name">이름</label>
+					<input type="text" name=userName" id="name"
+					autofocus="autofocus" placeholder="ex) 손길동"/>
+				</li>
+				<li>
+					<label>이메일</label>
+					<!-- required : 이메일 체크 해줌. -->
+					<input typeㄴ="email" name=userName" placeholder="ex) gildong@naver.com" required="required"/>
+				</li>
+				<li>
+					<label>날짜</label>
+					<!-- 자동으로 브라우저에서 달력 형식 만들어짐 -->
+					<input type="date"/>
+				</li>
+				<li>
+					<textarea rows="5" cols="60" placeholder="지원동기"></textarea>
+				</li>
+			</ol>
+		</fieldset>
+		<fieldset>
+			<input type="submit" value="전송">
+		</fieldset>
+	</form>
+</body>
+</html>
