@@ -1,0 +1,29 @@
+<%@page import="kosa.bean.Person" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
+<%
+    request.setAttribute("name", "kosta");
+
+    Person p = new Person("홍길동");
+    request.setAttribute("person", p);
+%>
+
+<!-- Dispatcher와 같다. -->
+<jsp:forward page="el_result.jsp"> 
+    <jsp:param value="banana" name="fruit"/>
+</jsp:forward>
+
+<%-- <jsp:forward page="jstl_exam2.jsp">
+    <jsp:param value="banana" name="fruit"/>
+</jsp:forward> --%>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>
