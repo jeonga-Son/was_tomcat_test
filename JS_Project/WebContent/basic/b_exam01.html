@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 같은 폴더 안에 있으므로 파일 바로 찾으면 됨. 같은 파일 아니라면 ../ 상위폴더로 나가서 찾아야 됨. -->
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+	function kosa01(){
+		alert('kosa');
+	}
+	
+	function kosa2(){
+		alert('kosa2');
+	}
+	
+	
+	/**
+	 * kosa2();
+	 */
+	 
+	 kosa3();
+</script>
+</head>
+<body>
+	<!-- html안에 자바스크립트 코드가 섞여있음. 웹 표준 입장에서는 분리되지 않은 좋지 않은 코드. -->
+	<input type="button" value="버튼" onclick="kosa()"/>
+</body>
+</html>

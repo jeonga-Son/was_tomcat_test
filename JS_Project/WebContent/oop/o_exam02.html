@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//3. 생성자 함수를 이용하여 객체를 생성 => 다수의 객체를 생성하기 위해서
+	
+	// 생성자 함수. 일반 함수와 똑같이 생김.
+	// 초기화 하는 역할
+	// 함수의 내용을 보면 알 수 있음.
+	// 생성자 함수에서의 this는 자기 자신의 grade 객체를 의미한다.
+/* 	function grade(kor, eng, mat){
+		this.kor = kor;
+		this.eng = eng;
+		this.mat = mat;		
+	}
+	
+	function student(name, grade){
+		this.name = name;
+		this.grade = grade;
+		this.getSum = function(){
+			return this.grade.kor + this.grade.eng + this.grade.mat;
+		};
+		
+		this.getAverage = function(){
+			return this.getSum()/3;
+		};
+		
+		this.toString = function(){
+			return this.name + "\t" + this.getSum() + "\t" + this.getAverage();
+		}
+	};
+	
+	var students = [];
+	
+	students.push(new student("깔깔", new grade(90, 80, 70)));
+	students.push(new student("졸리다", new grade(30, 40, 50)));
+	
+	for(let i in students) {
+		document.write(students[i].toString() + "<br>");
+	} */
+	
+	// prototype
+	// 자신의 알파 공간
+/* 	function student(name, kor, eng, mat){
+		this.name = name;
+		this.kor = kor;
+		this.eng = eng;
+		this.mat = mat;
+	};
+	
+	student.prototype = {
+			getSum: function(){
+				return this.kor + this.eng + this.mat;
+			},
+			
+			getAverage: function(){
+				return this.getSum()/3;
+			},
+			
+			toString: function(){
+				return this.name + "\t" + this.getSum() + "\t" + this.getAverage();
+			}
+	}
+			
+	var students = [];
+	
+	students.push(new student("홍길동", 90, 80, 70));
+	students.push(new student("조길동", 70, 50, 40));
+
+	for(let i in students) {
+		document.write(students[i].toString() + "<br>");
+	} */ 
+	
+	// 과제> Rectangle 생성자 함수를 만들고 사각형 넓이를 구하여보자.(prototype: getArea())
+	// 		생성자 함수를 통해서 객체를 생성하고 해당 함수를 호출해서 사용해보자.
+	
+/* 	function rectangle(width, height) {
+		this.width = width;
+		this.height = height;
+	};
+	
+	rectangle.prototype = {
+			getArea: function(){
+				return this.width * this.height;
+			},
+			
+			toString: function(){
+				return "넓이는 " + this.getArea() + " 입니다.";
+			}
+	}
+	
+	var ractangles = [];
+	
+	ractangles.push(new rectangle(10, 10));
+	ractangles.push(new rectangle(100, 100));
+	
+	for(let i in ractangles) {
+		document.write(ractangles[i].toString() + "<br>");
+	} */
+	
+	// 상속 : 클래스 기반 : ES6
+	class Rectangle {
+		constructor(w, h)
+		{
+			this.width = w;
+			this.height = h;
+		}
+		
+		getArea = function(){
+			return this.width * this.height;
+		}
+	}
+	
+	class Square extends Rectangle{
+		constructor(length)
+		{
+			super(length, length);
+		}
+	}
+	
+	let square = new Square(10);
+	console.log("넓이: " + square.getArea());
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

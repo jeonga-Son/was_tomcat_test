@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 라이브러리 추가 -->
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script> 
+<script type="text/javascript">
+/* 	let a = 4;
+	let b = 4;
+	console.log(a == b); // true
+	
+	let c = {a: 1};
+	let d = {a: 1};
+	console.log(c == d); // false
+	
+	let e = d;
+	console.log(d == e); // 서로 주소값이 같기 때문에 true.
+	console.log(c == e); // 서로 주소값이 다르기 때문에 false;
+	
+	d.a = 2;
+	console.log(e.a); // true
+	console.log(c.a);  */
+	
+/* 	let a = {q: 1};
+	let b = a;
+	console.log(a === b); // true
+	
+	b.q = 3;
+	console.log(b);
+	console.log(a);
+	
+	let c = {...a}; // 깊은 복사
+	console.log(a);
+	console.log(a === c); // 주소값이 같으면 true지만 주소값이 다르므로 false;
+	
+	a.q = 4;
+	console.log(a);
+	console.log(c); */
+	
+	let a = {q : 1};
+	let b = {...a};
+	console.log(b);
+	console.log(a.q === b.q);  // true
+	console.log(JSON.stringify(a));
+	console.log(JSON.stringify(b));
+	console.log(JSON.stringify(a) === JSON.stringify(b));
+	
+	let c = {a:1, b:2};
+	let d = {...c}; // 독립적으로 메모리가 새로 만들어짐.
+	console.log(JSON.stringify(c) === JSON.stringify(d));
+	
+	let e = {b:2, a:1}; // 순서가 다를 때는 false를 발생하기 때문에 라이브러리를 사용하여 isEqual을 써서 비교한다.
+	console.log(JSON.stringify(c) === JSON.stringify(e)); // false
+	console.log(_.isEqual(c,e)); // true, 순서가 바뀌더라도 이렇게 비교하면 true로 나옴.
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function sumAll(){
+		let sum = 0;
+		
+		for(let i = 0; i < arguments.length; i++) {
+			sum += arguments[i];
+		}
+		
+		return sum;
+	}
+	
+	console.log(sumAll(1,2,3,4,5,6,7,8,9,10));
+	
+	// 함수 파라미터 기본값 설정
+	function calculate(total, tax=0.1, tip=0.2) {
+		return total + (total * tax) + (total * tip);
+	}
+	
+	console.log(calculate(100, 0.2));
+	console.log(calculate(100));
+	
+	// 함수형 프로그래밍
+/* 	var greeting = function(name) {
+		return "Hello " + name;
+	}
+	
+	console.log(greeting('Kim'));
+ */
+ 
+/*  	// 백틱 사용
+ 	var greeting = (name) => {
+ 		return `Hello ${name}`;
+ 	}
+ 	
+ 	console.log(greeting('Park')); */
+
+	
+ 	var greeting = () => {
+ 		return 'Hello Seo';
+ 	}
+ 	
+ 	console.log(greeting()); 
+ 	
+ 	// 함수의 실행 컨텍스트 영역
+ 	/* let var1 = 10;
+ 	
+ 	function func(){
+ 		let var2 = 20;
+ 		console.log(var1);
+ 	}
+ 	
+ 	func(); */
+ 	
+/*  	let value = "value1";
+ 	
+ 	function printFunction(){
+ 		let value = "value2";
+ 		
+ 		function printValue(){
+ 			return value;
+ 		}
+ 		
+ 		console.log(printValue());
+ 	}
+ 	
+ 	printFunction(); */
+ 	
+/*  	let value = "value1";
+ 	
+ 	function printValue(){
+ 		return value;
+ 	}
+ 	
+ 	function printFunc(func) {
+ 		var value = "value2";
+ 		console.log(func());
+ 	}
+ 	
+ 	printFunc(printValue); */
+ 	
+ 	// 함수 클로저
+ 	// => 함수 호출 이후에도 해당 함수의 실행컨텍스트 영역을 유지
+ 	/* function outerFunc(){
+ 		let x = 10;
+ 		let innerFunc = function(){
+ 			console.log(x);
+ 		}
+ 		
+ 		return innerFunc;
+ 	}
+ 	
+ 	let inner = outerFunc();
+ 	inner(); */
+ 	
+/*  	function outer(arg1, arg2) {
+ 		let x = arg1;
+ 		let x2 = arg2;
+		let innerFunc = function(){
+			console.log(x);
+			console.log(x2);
+		}
+		
+		return innerFunc;
+ 	}
+ 	 
+ 	let inner = outer(16, 14);
+ 	inner(); */
+
+ 	function outer(arg1, arg2) {
+ 		function inner(innerArg) {
+ 			console.log((arg1 + arg2) / innerArg)
+ 		}
+ 		return inner;
+ 	}
+ 	
+/*  	let exam = outer(16, 14);
+ 	exam(10); */
+ 	outer(16, 14)(10);
+ 	
+</script>
+</head>
+<body>
+
+</body>
+</html>
